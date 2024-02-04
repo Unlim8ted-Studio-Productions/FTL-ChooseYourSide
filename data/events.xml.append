@@ -13,8 +13,10 @@
             <img back="BACKGROUND" planet="PLANET_POPULATED" />
             <choice>
                 <text>Join the rebels.</text>
-                <img back="galaxy" planet="PLANET_POPULATED" />
-                <event load="RebelTask"></event>
+                <event>
+                    <img back="galaxy" planet="PLANET_POPULATED" />
+                    <event load="RebelTask"></event>
+                </event>
             </choice>
             <choice>
                 <text>Join the Federation.</text>
@@ -24,7 +26,7 @@
                 </event>
             </choice>
             <choice>
-                <text>Join the Dogian Empire.</text>
+                <text>Join the Dogian Empire</text>
                 <event>
                     <img back="galaxy" planet="PLANET_POPULATED" />
                     <text>Welcome to the Dogian Empire.</text>
@@ -50,6 +52,7 @@
                 <event>
                     <text>Once you finish speaking the shopkeeper's demeanor suddenly shifts. "These items are not for sale to your kind," she hisses, before you find yourself under attack.</text>
                     <ship load="CatHideout" hostile="true" />
+                    <quest beacon="NEXT" event="DogEmpireBriefing"/>
                 </event>
             </choice>
         </event>
@@ -59,6 +62,7 @@
         <event>
             <text>You are foolish to attack us</text>
             <ship load="CatHideout" hostile="true" />
+            <quest beacon="NEXT" event="DogEmpireBriefing"/>
         </event>
     </choice>
     <choice>
@@ -82,11 +86,11 @@
                 <event>
                     <text>Here is some extra gear</text>
                     <store />
+                    <quest beacon="NEXT" event="DogEmpireBriefing"/>
                     
                 </event>
             </choice>
         </event>
-        <quest beacon="NEXT" event="DogEmpireBriefing"/>
     </choice>
     
 </event>
@@ -94,7 +98,9 @@
     <text>Suddenly, two cats that looked like ninjas boarded. Prepare to fight.</text>
     <boarders class="CatNinja" amount="2" />
 </event>
+
 <event name="fedp1" />
+
 <event name="RebelTask">
     <ship name="bossbuilt1" auto_blueprint="BOSS_3"></ship>
     <ship load="bossbuilt1" hostile="false" />
