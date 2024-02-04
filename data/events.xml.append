@@ -12,7 +12,35 @@
 	        	<event>
 	        		<text>You are now a rebel. You quickly jump away.</text>
 	        		<img back="galaxy" planet="PLANET_POPULATED" />
-                    <event load="RebelTask"/>
+                    <ship name="bossbuilt1" auto_blueprint="BOSS_3"></ship>
+	                <ship load="bossbuilt1" hostile="false" />
+                    <text>We need more parts to rebuild the flagship... Go defeat people and go to the next quest when you obtain 200 scrap</text>
+                    <choice>
+                        <text>ok</text>
+                        <event>
+                            <quest beacon="RANDOM" event="fedp1" />
+                        </event>
+                    </choice>
+                    <choice>
+                        <text>can I have some starter gear first?</text>
+                        <event>
+                            <text>You are lucky I am in a good mood, here you go..</text>
+                            <item_modify>
+	                			<item type="scrap" amount="50" />
+	                		</item_modify>
+	                		<weapon name="RANDOM" />
+                            <text>now we will see how powerfull you are..</text>
+                            <choice>
+                                <text>okay</text>
+                                <event>
+                                    <text/>
+                                    <ship name="testship" auto_blueprint="PLAYER_SHIP_EASY"></ship>
+                                    <ship load="testship" hostile="true"/>
+                                    <quest beacon="RANDOM" event="fedp1" />
+                                </event>
+                            </choice>
+                        </event>
+                    </choice>
 	        	</event>
 	        </choice>
 	        <choice>
@@ -28,7 +56,7 @@
 	        		<img back="galaxy" planet="PLANET_POPULATED" />
 	        		<text>Welcome to the Dogian Empire.</text>
 	        		<playSound>Cheztax</playSound>
-                    <!--<secretSector>Dogian_Empire</secretSector>-->
+                    <secretSector sector="Dogian_Empire">Dogian_Empire</secretSector>
                 
 	        		<!-- Additional logic to load Dog sector and play Cheztax audio would be implemented here -->
 	        	</event>
@@ -96,7 +124,6 @@
 
 <event name="RebelTask">
     <ship name="bossbuilt1" auto_blueprint="BOSS_3"></ship>
-    <!--<ship name="testship" auto_blueprint="PLAYER_SHIP_EASY"></ship>-->
 	<ship load="bossbuilt1" hostile="false" />
     <text>We need more parts to rebuild the flagship... Go defeat people and go to the next quest when you obtain 200 scrap</text>
     <choice>
@@ -118,7 +145,8 @@
                 <text>okay</text>
                 <event>
                     <text/>
-                    <!--<ship load="testship" hostile="true"/>-->
+                    <ship name="testship" auto_blueprint="PLAYER_SHIP_EASY"></ship>
+                    <ship load="testship" hostile="true"/>
                     <quest beacon="RANDOM" event="fedp1" />
                 </event>
             </choice>
