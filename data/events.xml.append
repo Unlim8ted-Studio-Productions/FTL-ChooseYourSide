@@ -1,183 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<events>
+    <event name="s">
+        <playSound>Cheztax</playSound>
+    </event>
 
-<event name="s">
-	<playSound>Cheztax</playSound>
-</event>
-<event name="offer" unique="true">
-	<text />
-	<choice>
-		<text>continue</text>
-		<event>
-			<text>Upon arriving at this beacon, you immediately receive three different calls. One asking you to join the rebels, one asking you to join the Federation, and one from the Dogian Empire? What's that?</text>
-			<img back="BACKGROUND" planet="PLANET_POPULATED" />
-			<choice>
-				<text>Join the rebels.</text>
-				<event>
-					<text>You are now a rebel. You quickly jump away.</text>
-					<img back="galaxy" planet="PLANET_POPULATED" />
-					<ship name="bossbuilt1" auto_blueprint="BOSS_3"></ship>
-					<ship load="bossbuilt1" hostile="false" />
-					<text>We need more parts to rebuild the flagship... Go defeat people and go to the next quest when you obtain 200 scrap</text>
-					<choice>
-						<text>ok</text>
-						<event>
-							<quest beacon="RANDOM" event="fedp1" />
-						</event>
-					</choice>
-					<choice>
-						<text>can I have some starter gear first?</text>
-						<event>
-							<text>You are lucky I am in a good mood, here you go..</text>
-							<item_modify>
-								<item type="scrap" amount="50" />
-							</item_modify>
-							<weapon name="RANDOM" />
-							<text>now we will see how powerfull you are..</text>
-							<choice>
-								<text>okay</text>
-								<event>
-									<text />
-									<ship name="testship" auto_blueprint="PLAYER_SHIP_EASY"></ship>
-									<ship load="testship" hostile="true" />
-									<quest beacon="RANDOM" event="fedp1" />
-								</event>
-							</choice>
-						</event>
-					</choice>
-				</event>
-			</choice>
-			<choice>
-				<text>Join the Federation.</text>
-				<event>
-					<text>You are now in the Federation. You quickly jump away.</text>
-					<img back="galaxy" planet="PLANET_POPULATED" />
-				</event>
-			</choice>
-			<choice>
-				<text>Join the Dogian Empire.</text>
-				<event>
-					<img back="galaxy" planet="PLANET_POPULATED" />
-					<text>Welcome to the Dogian Empire.</text>
-					<playSound>Cheztax</playSound>
-					<secretSector sector="Dogian_Empire" name="Dogian_Empire">Dogian_Empire</secretSector>
-					<!-- Additional logic to load Dog sector and play Cheztax audio would be implemented here -->
-				</event>
-			</choice>
-		</event>
-	</choice>
-</event>
-<event name="dogquestp1">
-	<ship name="CatHideout" auto_blueprint="cat hideout"></ship>
-	<ship load="CatHideout" hostile="false" />
-	<text>You pull up to what looks like a broken down looking shop. You watch as a cat sticks her head out the window to offer you some goods.</text>
-	<choice>
-		<text>Look at the goods with your shields up and your engine charged</text>
-		<event>
-			<text>Heres what we have...</text>
-			<store />
-			<choice>
-				<text>Ask them to stop attacking the Dogian Empire</text>
-				<event>
-					<text>Once you finish speaking the shopkeeper's demeanor suddenly shifts. "These items are not for sale to your kind," she hisses, before you find yourself under attack.</text>
-					<ship load="CatHideout" hostile="true" />
-				</event>
-			</choice>
-		</event>
-	</choice>
-	<choice>
-		<text>attack!</text>
-		<event>
-			<text>You are foolish to attack us</text>
-			<ship load="CatHideout" hostile="true" />
-		</event>
-	</choice>
-	<choice>
-		<text>run away</text>
-		<event>
-			<text>you start to run away but halfway to the next planet your ship suddenly stops, as if gripped by a giant hand.. suddenly the dog emporour appears in front of your ship.. where do you think your going??!??! I thought you would help us, betrayer</text>
-			<ship name="dogemporour" auto_blueprint="PLAYER_SHIP_HARD"></ship>
-			<ship load="dogemporour" hostile="false" />
-			<text>I will give you one last chance</text>
-			<choice>
-				<text>Just fight me, weakling</text>
-				<event>
-					<text>Fine</text>
-					<ship load="dogemporour" hostile="true" />
-					<customFleet right="true"></customFleet>
-				</event>
-			</choice>
-			<choice>
-				<text>Thank you for the second chance</text>
-				<event>
-					<text>Here is some extra gear</text>
-					<store />
-				</event>
-			</choice>
-		</event>
-	</choice>
-</event>
-<event name="CatAmbush">
-	<text>Suddenly, two cats that looked like ninjas boarded. Prepare to fight.</text>
-	<boarders class="CatNinja" amount="2" />
-</event>
-<event name="fedp1" />
-<event name="RebelTask">
-	<ship name="bossbuilt1" auto_blueprint="BOSS_3"></ship>
-	<ship load="bossbuilt1" hostile="false" />
-	<text>We need more parts to rebuild the flagship... Go defeat people and go to the next quest when you obtain 200 scrap</text>
-	<choice>
-		<text>ok</text>
-		<event>
-			<quest beacon="RANDOM" event="fedp1" />
-		</event>
-	</choice>
-	<choice>
-		<text>can I have some starter gear first?</text>
-		<event>
-			<text>You are lucky I am in a good mood, here you go..</text>
-			<item_modify>
-				<item type="scrap" amount="50" />
-			</item_modify>
-			<weapon name="RANDOM" />
-			<text>now we will see how powerfull you are..</text>
-			<choice>
-				<text>okay</text>
-				<event>
-					<text />
-					<ship name="testship" auto_blueprint="PLAYER_SHIP_EASY"></ship>
-					<ship load="testship" hostile="true" />
-					<quest beacon="RANDOM" event="fedp1" />
-				</event>
-			</choice>
-		</event>
-	</choice>
-</event>
-<event name="Dogrewardtask">
-	<ship name="dogemporour" auto_blueprint="PLAYER_SHIP_HARD"></ship>
-	<ship load="dogemporour" hostile="false" />
-	<text>Welcome to the Dogian Empire. Lately, there have been many rebel cat ships attacking. If you can find their hideout and destroy them, we will reward you with our top scientists.</text>
-	<choice>
-		<text>Accept</text>
-		<event>
-			<text>The Dogian official nods approvingly and hands you 50 scrap and a weapon for your journey.</text>
-			<item_modify>
-				<item type="scrap" amount="50" />
-			</item_modify>
-			<weapon name="RANDOM" />
-			<text>As you prepare to depart, two cats that looked like ninjas boarded. It seems the cats have already made their move. Prepare to fight.</text>
-			<boarders class="CatNinja" amount="2" />
-			<text>This will be your first test</text>
-			<quest beacon="RANDOM" event="dogquestp1" />
-			<!-- Logic to add quest beacon in the last sector -->
-		</event>
-	</choice>
-	<choice>
-		<text>Decline</text>
-		<event>
-			<text>You decide not to involve yourself in the Dogian Empire's conflict with the rebel cats.</text>
-		</event>
-	</choice>
-</event>
+    <event name="offer" unique="true">
+        <text />
+        <choice>
+            <text>continue</text>
+            <event>
+                <text>Upon arriving at this beacon, you immediately receive three different calls. One asking you to join the rebels, one asking you to join the Federation, and one from the Dogian Empire? What's that?</text>
+                <img back="BACKGROUND" planet="PLANET_POPULATED" />
+                <choice>
+                    <text>Join the rebels.</text>
+                    <event load="RebelTask"></event>
+                </choice>
+                <choice>
+                    <text>Join the Federation.</text>
+                    <event>
+                        <text>You are now in the Federation. You quickly jump away.</text>
+                        <img back="galaxy" planet="PLANET_POPULATED" />
+                    </event>
+                </choice>
+                <choice>
+                    <text>Join the Dogian Empire.</text>
+                    <event>
+                        <img back="galaxy" planet="PLANET_POPULATED" />
+                        <text>Welcome to the Dogian Empire.</text>
+                        <playSound>Cheztax</playSound>
+                        <secretSector sector="Dogian_Empire" name="Dogian_Empire">Dogian_Empire</secretSector>
+                        <!-- Additional logic to load Dog sector and play Cheztax audio would be implemented here -->
+                    </event>
+                </choice>
+            </event>
+        </choice>
+    </event>
+
+    <event name="dogquestp1">
+        <ship name="CatHideout" auto_blueprint="cat hideout"></ship>
+        <ship load="CatHideout" hostile="false" />
+        <text>You pull up to what looks like a broken down looking shop. You watch as a cat sticks her head out the window to offer you some goods.</text>
+        <choice>
+            <text>Look at the goods with your shields up and your engine charged</text>
+            <event>
+                <text>Heres what we have...</text>
+                <store />
+                <choice>
+                    <text>Ask them to stop attacking the Dogian Empire</text>
+                    <event>
+                        <text>Once you finish speaking the shopkeeper's demeanor suddenly shifts. "These items are not for sale to your kind," she hisses, before you find yourself under attack.</text>
+                        <ship load="CatHideout" hostile="true" />
+                    </event>
+                </choice>
+            </event>
+        </choice>
+        <choice>
+            <text>attack!</text>
+            <event>
+                <text>You are foolish to attack us</text>
+                <ship load="CatHideout" hostile="true" />
+            </event>
+        </choice>
+        <choice>
+            <text>run away</text>
+            <event>
+                <text>you start to run away but halfway to the next planet your ship suddenly stops, as if gripped by a giant hand.. suddenly the dog emporour appears in front of your ship.. where do you think your going??!??! I thought you would help us, betrayer</text>
+                <enemyDamage force="true">9999999</enemyDamage>
+                <ship name="dogemporour" auto_blueprint="PLAYER_SHIP_HARD"></ship>
+                <ship load="dogemporour" hostile="false" />
+                <text>I will give you one last chance</text>
+                <choice>
+                    <text>Just fight me, weakling</text>
+                    <event>
+                        <text>Fine</text>
+                        <ship load="dogemporour" hostile="true" />
+                        <customFleet right="true"></customFleet>
+                    </event>
+                </choice>
+                <choice>
+                    <text>Thank you for the second chance</text>
+                    <event>
+                        <text>Here is some extra gear</text>
+                        <store />
+                    </event>
+                </choice>
+            </event>
+        </choice>
+    </event>
+
+    <event name="CatAmbush">
+        <text>Suddenly, two cats that looked like ninjas boarded. Prepare to fight.</text>
+        <boarders class="CatNinja" amount="2" />
+    </event>
+
+    <event name="fedp1" />
+
+    <event name="RebelTask">
+        <ship name="bossbuilt1" auto_blueprint="BOSS_3"></ship>
+        <ship load="bossbuilt1" hostile="false" />
+        <text>We need more parts to rebuild the flagship... Go defeat people and go to the next quest when you obtain 200 scrap</text>
+        <choice>
+            <text>ok</text>
+            <event>
+                <quest beacon="RANDOM" event="fedp1" />
+            </event>
+        </choice>
+        <choice>
+            <text>can I have some starter gear first?</text>
+            <event>
+                <text>You are lucky I am in a good mood, here you go..</text>
+                <item_modify>
+                    <item type="scrap" amount="50" />
+                </item_modify>
+                <weapon name="RANDOM" />
+                <text>now we will see how powerfull you are..</text>
+                <choice>
+                    <text>okay</text>
+                    <event>
+                        <text />
+                        <ship name="testship" auto_blueprint="PLAYER_SHIP_EASY"></ship>
+                        <ship load="testship" hostile="true" />
+                        <quest beacon="RANDOM" event="fedp1" />
+                    </event>
+                </choice>
+            </event>
+        </choice>
+    </event>
+
+    <event name="Dogrewardtask">
+        <ship name="dogemporour" auto_blueprint="PLAYER_SHIP_HARD"></ship>
+        <ship load="dogemporour" hostile="false" />
+        <text>Welcome to the Dogian Empire. Lately, there have been many rebel cat ships attacking. If you can find their hideout and destroy them, we will reward you with our top scientists.</text>
+        <choice>
+            <text>Accept</text>
+            <event>
+                <text>The Dogian official nods approvingly and hands you 50 scrap and a weapon for your journey.</text>
+                <item_modify>
+                    <item type="scrap" amount="50" />
+                </item_modify>
+                <weapon name="RANDOM" />
+                <text>As you prepare to depart, two cats that looked like ninjas boarded. It seems the cats have already made their move. Prepare to fight.</text>
+                <boarders class="CatNinja" amount="2" />
+                <text>This will be your first test</text>
+                <quest beacon="RANDOM" event="dogquestp1" />
+                <!-- Logic to add quest beacon in the last sector -->
+            </event>
+        </choice>
+        <choice>
+            <text>Decline</text>
+            <event>
+                <text>You decide not to involve yourself in the Dogian Empire's conflict with the rebel cats.</text>
+            </event>
+        </choice>
+    </event>
+</events>
+
+
+
+
+
+
 <!--['asteroids', 'hitShield1', 'hitHull1', 'dodge', 'decloak', 'levelup', 'deadCrew', 'brawling', 'femaleDeath2', 'startPower', 'weapon', 'item', 'rockStomp2', 'shipBlueprint', 'gib5', 'clone', 'extinguish', 
     'femaleDeath1', 'repairShip', 'repair', 'trackList', 'sysExplosion', 'hoverBeep', 'secretSector', 'lockdown2', 'droneImage', 'scrapCount', 'jumpLeave', 'enginesOn', 'event', 'rockThrow3', 'ionShoot3', 
     'weaponAnim', 'missSounds', 'lockdown1', 'ionShields3', 'fireFrame', 'smallExplosion2', 'store', 'combat', 'augBlueprint', 'explosion4', 'sell', 'buy', 'blueprint', 'droneBlueprint', 'shieldsUp', 'smallExplosion', 

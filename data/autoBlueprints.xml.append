@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <shipBlueprint name="cat hideout" layout="cat" img="cat">
-	<class id="text_cat hideout_class">text_cat hideout_class</class>
+	<class id="text_cat hideout_class">Catian Nations</class>
 	<minSector>8</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
@@ -16,6 +16,26 @@
 	<droneSlots>0</droneSlots>
 	<weaponList missiles="0" count="2" load="OVERRIDE_WEAPONS_REBEL" />
 	<droneList drones="0" count="0" load="DRONES_INTERNAL" />
+	<health amount="40" />
+	<maxPower amount="20" />
+	<boardingAI>invasion</boardingAI>
+</shipBlueprint>
+<shipBlueprint name="cat warship" layout="cat" img="cat">
+	<class id="text_cat warship_class">catian warship</class>
+	<minSector>8</minSector>
+	<maxSector>8</maxSector>
+	<systemList>
+		<engines power="1" max="1" room="4" start="true" />
+		<oxygen power="1" max="1" room="3" start="true" />
+		<pilot power="1" max="1" room="5" start="true" />
+		<shields power="1" max="1" room="0" start="true" />
+		<teleporter power="1" max="1" room="1" start="true" />
+		<weapons power="1" max="1" room="2" start="true" />
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>1</droneSlots>
+	<weaponList missiles="100" count="2" load="OVERRIDE_WEAPONS_REBEL" />
+	<droneList drones="0" count="1" load="DRONES_INTERNAL" />
 	<health amount="40" />
 	<maxPower amount="20" />
 	<boardingAI>invasion</boardingAI>
