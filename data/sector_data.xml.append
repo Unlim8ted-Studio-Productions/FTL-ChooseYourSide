@@ -42,5 +42,5 @@
 	<event name="HOSTILE1" min="2" max="2" />
 	<event name="HOSTILE_BOARDING" min="0" max="0" />
 </sectorDescription>
-
 <!--27-->
+

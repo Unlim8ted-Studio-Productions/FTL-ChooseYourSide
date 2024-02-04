@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <shipBlueprint name="cat hideout" layout="cat" img="cat">
-	<class id="text_cat hideout_class">Catian Nations</class>
+	<class id="text_cat hideout_class">text_cat hideout_class</class>
 	<minSector>8</minSector>
 	<maxSector>8</maxSector>
 	<systemList>
