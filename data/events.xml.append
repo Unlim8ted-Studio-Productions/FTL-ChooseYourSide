@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<event name="s">
+    <playSound>Cheztax</playSound>
+</event>
+
 <event name="offer" unique="true">
     <text/>
     <choice>
@@ -56,7 +60,7 @@
 	        		<img back="galaxy" planet="PLANET_POPULATED" />
 	        		<text>Welcome to the Dogian Empire.</text>
 	        		<playSound>Cheztax</playSound>
-                    <secretSector sector="Dogian_Empire">Dogian_Empire</secretSector>
+                    <secretSector sector="Dogian_Empire" name="Dogian_Empire">Dogian_Empire</secretSector>
                 
 	        		<!-- Additional logic to load Dog sector and play Cheztax audio would be implemented here -->
 	        	</event>
