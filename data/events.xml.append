@@ -82,10 +82,13 @@
                     <event>
                         <text>Here is some extra gear</text>
                         <store />
+                        
                     </event>
                 </choice>
             </event>
+            <quest beacon="NEXT" event="DogEmpireBriefing"/>
         </choice>
+        
     </event>
 
     <event name="CatAmbush">
@@ -152,6 +155,105 @@
                 <text>You decide not to involve yourself in the Dogian Empire's conflict with the rebel cats.</text>
             </event>
         </choice>
+    </event>
+
+    <event name="DogEmpireBriefing">
+        <text>The Dogian Empire has entrusted you with a critical mission to intercept a shipment of weapons headed for the Rebel-Cat alliance. Success will weaken their forces significantly.</text>
+        <choice>
+            <text>Set course for the shipment</text>
+            <event>
+                <quest beacon="RANDOM" event="InterceptShipment" />
+            </event>
+        </choice>
+    </event>
+
+    <event name="InterceptShipment">
+        <ship name="REBEL_TRANSPORT" auto_blueprint="REBEL_TRANSPORT"></ship>
+        <ship load="REBEL_TRANSPORT" hostile="false" />
+        <text>As you approach the coordinates, you detect multiple ships guarding the shipment. Stealth is an option, but so is a full-frontal assault.</text>
+        <choice>
+            <text>Attack head-on</text>
+            <event>
+                <text>You decide to confront the enemy directly. Prepare for battle!</text>
+                <ship load="REBEL_TRANSPORT" hostile="true" />
+                <!--<ship load="CatEscort" hostile="true" />-->
+                <choice>
+                    <text>Continue</text>
+                    <event>
+                        <text>The shipment is secured, but you've taken some damage. The Dogian Empire will be pleased.</text>
+                        <item_modify>
+                            <item type="scrap" amount="100" />
+                        </item_modify>
+                        <weapon name="ARTILLERY_BOSS_1" />
+                        <quest beacon="NEXT" event="ReturnToEmpire" />
+                    </event>
+                </choice>
+            </event>
+        </choice>
+        <choice>
+            <text>Use stealth to steal the shipment and destroy the ship</text>
+            <event>
+                <enemyDamage>24</enemyDamage>
+                <item_modify>
+                    <item type="scrap" amount="75" />
+                </item_modify>
+                <text>success</text>
+                
+                <!--<weapon name="StealthTechUpgrade" />-->
+                <quest beacon="NEXT" event="ReturnToEmpireStealth" />
+            </event>
+        </choice>
+    </event>
+
+    <!-- Returning to the Dogian Empire after a frontal assault -->
+    <event name="ReturnToEmpire">
+        <text>With the stolen shipment, you return to the Dogian Empire. The Emperor is impressed by your bravery.</text>
+        <choice>
+            <text>Report your success</text>
+            <event>
+                <text>"Your actions have saved countless lives," the Emperor says, granting you a medal of honor and additional resources for your journey.</text>
+                <item_modify>
+                    <item type="scrap" amount="150" />
+                </item_modify>
+               <!--<weapon name="EMPDisruptor" />-->
+                <quest beacon="RANDOM" event="NextMission" />
+            </event>
+        </choice>
+        <choice>
+            <text>tell him about the weapon you found</text>
+            <event>
+                <text>This was being used for the rebel flagship, thank you for stopping them..</text>
+                <removeItem name="ARTILLERY_BOSS_1"/>
+            </event>
+        </choice>
+    </event>
+
+    <!-- Returning to the Dogian Empire after using stealth -->
+    <event name="ReturnToEmpireStealth">
+        <text>You report back to the Dogian Empire with the shipment. The Emperor praises your cunning and stealth.</text>
+        <choice>
+            <text>Report your success</text>
+            <event>
+                <text>"A true shadow warrior," the Emperor remarks, rewarding you with advanced stealth technology and resources.</text>
+                <item_modify>
+                    <item type="scrap" amount="100" />
+                </item_modify>
+                <augment name="CREW_STIMS" />
+                <quest beacon="RANDOM" event="NextStealthMission" />
+            </event>
+        </choice>
+    </event>
+
+    <!-- Placeholder for the next mission -->
+    <event name="NextMission">
+        <text>The Dogian Empire has identified a Rebel-Cat research facility developing a new weapon. Destroying or capturing this facility could turn the tide of the war.</text>
+        <!-- Event choices and outcomes would be defined here -->
+    </event>
+
+    <!-- Placeholder for the next stealth mission -->
+    <event name="NextStealthMission">
+        <text>An undercover agent has gone missing in Rebel-Cat territory. Your mission is to locate and extract the agent without alerting the enemy.</text>
+        <!-- Event choices and outcomes would be defined here -->
     </event>
 </events>
 
