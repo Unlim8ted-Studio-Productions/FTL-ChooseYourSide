@@ -44,3 +44,8 @@
 </sectorDescription>
 <!--27-->
 
+
+<mod:findName type="sectorDescription" name="CRYSTAL_HOME">
+   <mod-overwrite:startEvent>Dogrewardtask</mod-overwrite:startEvent>
+ <!---<mod-overwrite:name>Dogian_Empire</mod-overwrite:name>-->
+</mod:findName>

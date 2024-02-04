@@ -31,6 +31,7 @@
                     <img back="galaxy" planet="PLANET_POPULATED" />
                     <text>Welcome to the Dogian Empire.</text>
                     <playSound>Cheztax</playSound>
+                    
                     <secretSector sector="Dogian_Empire" name="Dogian_Empire">Dogian_Empire</secretSector>
                     <!-- Additional logic to load Dog sector and play Cheztax audio would be implemented here -->
                 </event>
@@ -251,8 +252,6 @@
     <text>An undercover agent has gone missing in Rebel-Cat territory. Your mission is to locate and extract the agent without alerting the enemy.</text>
     <!-- Event choices and outcomes would be defined here -->
 </event>
-
-
 
 
 
