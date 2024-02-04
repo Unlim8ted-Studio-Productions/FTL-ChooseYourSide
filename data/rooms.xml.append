@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<roomLayout name="engines_7">
+	<computerGlow x="54" y="44" dir="RIGHT" />
+</roomLayout>
+<roomLayout name="pilot_4">
+	<computerGlow name="glow_pilot" x="19" y="9" dir="RIGHT" />
+</roomLayout>
+<roomLayout name="shields_10">
+	<computerGlow x="35" y="53" dir="DOWN" />
+</roomLayout>
+<roomLayout name="weapons_9">
+	<computerGlow x="40" y="0" dir="UP" />
+</roomLayout>
+<roomLayout name="weapons">
+	<computerGlow x="0" y="0" dir="UP" />
+</roomLayout>
+<roomLayout name="shields">
+	<computerGlow x="0" y="0" dir="UP" />
+</roomLayout>
+<roomLayout name="pilot">
+	<computerGlow name="glow_pilot" x="0" y="0" dir="RIGHT" />
+</roomLayout>
+<roomLayout name="engines">
+	<computerGlow x="0" y="0" dir="DOWN" />
+</roomLayout>
+

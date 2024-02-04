@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<shipBlueprint name="PLAYER_SHIP_ANAEROBIC" layout="anaerobic_cruiser" img="anaerobic_cruiser">
+	<class id="text_PLAYER_SHIP_ANAEROBIC_class">Lanius Cruiser</class>
+	<name id="text_PLAYER_SHIP_ANAEROBIC_name">Kruos</name>
+	<desc id="text_PLAYER_SHIP_ANAEROBIC_desc">The sharp knife-like structures make Lanius ships a sight to behold. This cruiser was adapted to support the other races of the Federation.</desc>
+	<systemList>
+		<battery power="1" room="10" start="false" img="room_battery_10" />
+		<cloaking power="1" room="6" start="false" img="room_cloaking_4" />
+		<clonebay power="1" room="0" start="true">
+			<slot>
+				<number>0</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="15" start="true" img="room_doors_2">
+			<slot>
+				<direction>down</direction>
+				<number>0</number>
+			</slot>
+		</doors>
+		<drones power="2" room="11" start="false" img="room_drones_9" />
+		<engines power="1" room="7" start="true" img="room_engines_7">
+			<slot>
+				<direction>right</direction>
+				<number>3</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="3" start="true" img="room_hacking_5" />
+		<medbay power="1" room="0" start="false" img="room_medbay_4">
+			<slot>
+				<number>0</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="13" start="false" img="room_mind_6" />
+		<oxygen power="1" room="2" start="true" img="room_oxygen_2" />
+		<pilot power="1" room="8" start="true" img="room_pilot_4">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="14" start="true" img="room_sensors">
+			<slot>
+				<direction>down</direction>
+				<number>1</number>
+			</slot>
+		</sensors>
+		<shields power="2" room="5" start="true" img="room_shields_10">
+			<slot>
+				<direction>down</direction>
+				<number>3</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="1" start="false" />
+		<weapons power="3" room="9" start="true" img="room_weapons_9">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>4</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="3" count="4">
+		<weapon name="LASER_CHAINGUN" />
+		<weapon name="ION_STUN" />
+	</weaponList>
+	<droneList drones="9" count="2" />
+	<health amount="30" />
+	<maxPower amount="8" />
+	<crewCount amount="1" class="human" />
+	<crewCount amount="1" class="anaerobic" />
+	<crewCount amount="1" class="anaerobic" />
+	<aug name="O2_MASKS" />
+</shipBlueprint>
+
