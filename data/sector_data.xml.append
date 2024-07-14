@@ -11,7 +11,7 @@
 	<exitBeacon event="CatAmbush"></exitBeacon>
 	<event name="CatAmbush" min="15" max="20" />
 	<event name="ITEMS" min="1" max="2" />
-	<event name="NEUTRAL2" min="2" max="4" />
+	<event name="NEUTRAL" min="2" max="4" />
 	<event name="STORE" min="1" max="2" />
 	<event name="DISTRESS_BEACON" min="1" max="2" />
 	<event name="HOSTILE2" min="4" max="6" />
@@ -33,7 +33,7 @@
 	<exitBeacon event="CatAmbush"></exitBeacon>
 	<event name="STORE" min="15" max="20" />
 	<event name="ITEMS" min="1" max="2" />
-	<event name="NEUTRAL2" min="2" max="4" />
+	<event name="NEUTRAL" min="2" max="4" />
 	<event name="NOTHING" min="1" max="2" />
 	<event name="DISTRESS_BEACON" min="1" max="2" />
 	<event name="HOSTILE2" min="4" max="6" />
@@ -43,9 +43,8 @@
 	<event name="HOSTILE_BOARDING" min="0" max="0" />
 </sectorDescription>
 <!--27-->
-
-
 <mod:findName type="sectorDescription" name="CRYSTAL_HOME">
-   <mod-overwrite:startEvent>Dogrewardtask</mod-overwrite:startEvent>
- <!--<mod-overwrite:name>Dogian_Empire</mod-overwrite:name>-->
+	<mod-overwrite:startEvent>Dogrewardtask</mod-overwrite:startEvent>
+	<!--<mod-overwrite:name>Dogian_Empire</mod-overwrite:name>-->
 </mod:findName>
+
